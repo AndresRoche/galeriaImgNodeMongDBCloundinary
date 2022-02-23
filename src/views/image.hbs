@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Photos Gallery</title>
+  <!-- bootstrap  o mas bien BOOTSWATCH-->
+  <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+  <!-- my style -->
+  <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+
+
+  <!-- navegacion -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+  <div class="container-fluid" style="display:flex;justify-content: space-between;">
+    <a class="navbar-brand" href="/">Photos Gallery</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="justify-content:flex-end;">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/images/add">Image Add</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- style from here is the public/css/master.css-->
+  <div class="gallery__content">
+    {{#each photos}}
+    <div class="card" style="margin:10px">
+     <img src="{{imgURL}}" class="card-img-top" alt="{{description}}">
+     <div class="card-body">
+       <a href="{{imgURL}}"><p class="card-title">{{title}}</p></a>
+     </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+
+<div class="card-footer text-muted" style="text-align:center">
+  Andres Roche Copyrig
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Photos Gallery</title>
+  <!-- bootstrap  o mas bien BOOTSWATCH-->
+  <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+
+</head>
+<body>
+
+
+  <!-- navegacion -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+    <div class="container-fluid" style="display:flex;justify-content: space-between;">
+      <a class="navbar-brand" href="/">Photos Gallery</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav" style="justify-content:flex-end;">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/images/add">Image Add</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+
+
+<div class="container p-4" style="display:flex;justify-content:space-between">
+  <div class="row" style="margin-right: 20px">
+    <div class="" >
+        <div class="card">
+          <div class="car-body p-4">
+            <form action="/images/add" method="post" enctype="multipart/form-data">
+              <div class="form-floating mb-3">
+                <input type="text" required name="title" class="form-control" id="floatingInput" placeholder="Image Title">
+                <label for="floatingInput">Name Image</label>
+              </div>
+              <div class="form-floating" required style="margin-bottom: 20px;">
+                <textarea class="form-control" required name="description" id="floatingPassword" placeholder="Description"></textarea>
+                <label for="floatingPassword">Description Image</label>
+              </div>
+              <div class="input-group mb-3">
+                <input type="file" required class="form-control" name="image" id="inputGroupFile02">
+              </div>
+
+              <button class="btn btn-primary">
+                Upload Photo
+              </button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each photos}}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{description}}</td>
+          <td>
+            <a href="{{imgURL}}" class="btn btn-primary">view</a>
+            <a href="/images/delete/{{_id}}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+<div class="card-footer text-muted" style="text-align:center">
+  Andres Roche Copyrig
+</div>
+
+</body>
+</html>
