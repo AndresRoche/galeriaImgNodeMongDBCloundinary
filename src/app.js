@@ -16,7 +16,7 @@ const hbs = create({ //configuramos el nuevo motor de html es como un ejs pero h
 });
 
 // Settings
-app.set('port', process.env.POST || 3000);  //puerto
+app.set('port', process.env.PORT || 3000);  //puerto
 app.set('views', path.join(__dirname, 'views')); //le indicamos donde esta index.htmls
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
