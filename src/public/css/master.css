@@ -12,3 +12,21 @@
   grid-auto-flow: dense;
   grid-gap: 10px;
 }
+
+
+.container.p-4{
+  display:flex;
+  justify-content: space-between;
+}
+
+
+/* diseño mobile */
+@media only screen and (max-width: 1000px){
+    .container.p-4{
+      display: block;
+    }
+
+    .col-md-8{
+      width: 100%;
+    }
+}
